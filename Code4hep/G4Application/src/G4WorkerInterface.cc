@@ -115,7 +115,7 @@ void G4WorkerInterface::initializeG4(G4MTRunManager* masterRM)
   threadInitialized_ = true;
 }
 
-G4Event* G4WorkerInterface::produce(G4Event* g4evt)
+void G4WorkerInterface::produce(G4Event* g4evt)
 {
   if (g4evt == nullptr)
   {
@@ -130,8 +130,6 @@ G4Event* G4WorkerInterface::produce(G4Event* g4evt)
   }
 
   kernel->GetEventManager()->ProcessOneEvent(g4evt);
-  
-  return g4evt;
 }
 
 void G4WorkerInterface::endRun()
