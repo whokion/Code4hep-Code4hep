@@ -202,7 +202,7 @@ void G4SimProducer::endStream()
   });
 }
 
-// Move a EDM4hep collection T into edm::Event under 'level'
+// Move a EDM4hep collection T into edm::Event under 'label'
 template <typename T>
 void G4SimProducer::putCollection(edm::Event& e, T&& coll,
 				  const std::string& label)
