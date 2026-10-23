@@ -61,8 +61,6 @@ private:
   template <typename HitT, typename CollT>
   static void copyHits(G4VHitsCollection* hc, CollT& out);
 
-private:
-
   RunEvent m_runEvent;  // run one event on the Geant4 worker
   const HitCollectionMap m_collectionMap; 
 };
