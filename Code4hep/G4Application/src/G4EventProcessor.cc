@@ -41,7 +41,7 @@ G4EventProcessor::G4EventProcessor(RunEvent runEvent)
  */
 G4EventProcessor::HitCollections
 G4EventProcessor::operator()(G4Event& g4evt) const
-
+{
   // Process g4evt on the Geant4 worker 
   m_runEvent(&g4evt);
 
