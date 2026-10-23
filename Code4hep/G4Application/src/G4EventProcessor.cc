@@ -43,7 +43,7 @@ G4EventProcessor::HitCollections
 G4EventProcessor::operator()(G4Event& g4evt) const
 {
   // Process g4evt on the Geant4 worker 
-  m_runEvent(&g4evt);
+  m_runEvent(g4evt);
 
   // Convert the resulting Geant4 hits into EDM4hep collections.
   HitCollections coll;

@@ -115,13 +115,8 @@ void G4WorkerInterface::initializeG4(G4MTRunManager* masterRM)
   threadInitialized_ = true;
 }
 
-void G4WorkerInterface::produce(G4Event* g4evt)
+void G4WorkerInterface::produce(G4Event& g4evt)
 {
-  if (g4evt == nullptr)
-  {
-    throw cms::Exception("LogicError") << "produce called with null G4Event";
-  }
-
   auto kernel = workerRM_->GetWorkerRunManagerKernel();
   if (!kernel)
   {
@@ -129,7 +124,7 @@ void G4WorkerInterface::produce(G4Event* g4evt)
       << "WorkerRunManagerKernel not available";
   }
 
-  kernel->GetEventManager()->ProcessOneEvent(g4evt);
+  kernel->GetEventManager()->ProcessOneEvent(&g4evt);
 }
 
 void G4WorkerInterface::endRun()

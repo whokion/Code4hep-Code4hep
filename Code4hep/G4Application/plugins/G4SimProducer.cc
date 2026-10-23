@@ -91,7 +91,7 @@ G4SimProducer::G4SimProducer(const edm::ParameterSet& p,
   , m_handoff{p.getUntrackedParameter<int>("workerThreadStackSize", 10 * 1024*1024)}
   , m_masterThread(masterThread)
   , mcToken_(consumes(p.getParameter<edm::InputTag>("generator")))
-  , m_eventProcessor([this](G4Event* evt) { m_workerInterface->produce(evt); })
+  , m_eventProcessor([this](G4Event& evt) { m_workerInterface->produce(evt); })
 {
   // Construct the worker interface on the worker thread using the same
   // thread stack semantics as later event processing.

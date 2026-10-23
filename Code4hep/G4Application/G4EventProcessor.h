@@ -34,7 +34,7 @@ public:
   };
 
   // Callable that processes one G4Event on the Geant4 worker
-  using RunEvent = std::function<void(G4Event*)>;
+  using RunEvent = std::function<void(G4Event&)>;
 
   explicit G4EventProcessor(RunEvent runEvent);
 
