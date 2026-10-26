@@ -16,8 +16,8 @@
 #include "Code4hep/G4Application/ThreadHandoff.h"
 #include "Code4hep/G4Application/G4MasterInterface.h"
 #include "Code4hep/G4Application/G4WorkerInterface.h"
-
 #include "Code4hep/G4Application/G4EventProcessor.h"
+#include "Code4hep/PodioUtilities/assigningProductTo.h"
 
 #include "G4Event.hh"
 
